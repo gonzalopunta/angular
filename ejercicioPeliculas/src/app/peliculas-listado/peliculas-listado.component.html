@@ -3,19 +3,20 @@
         <mat-card-header>
             <img width=20px mat-card-image [src]="pelicula.poster_path" alt="foto de la pelicula {{pelicula.title}}">
         </mat-card-header>
-        <mat-card-content>
-            <circle-progress
-            [percent]="pelicula.vote_average*10"
-            [radius]="15"
-            [titleFontSize]="15"
-            [outerStrokeWidth]="5"
-            [innerStrokeWidth]="10"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="300"
-            [showSubtitle]="false">
-         </circle-progress>
+        <mat-card-content
+            [ngStyle]="{'color': getColor(pelicula.vote_average*10)}">
+                           <circle-progress
+                           [percent]="pelicula.vote_average*10"
+                           [radius]="35"
+                           [titleFontSize]="15"
+                           [outerStrokeWidth]="5"
+                           [innerStrokeWidth]="10"
+                           [outerStrokeColor]="getColor(pelicula.vote_average*10)"
+                           [innerStrokeColor]="getColor(pelicula.vote_average*10)"
+                           [animation]="true"
+                           [animationDuration]="300"
+                           [showSubtitle]="false"
+                         ></circle-progress>
          </mat-card-content>
 
          <mat-card-content>

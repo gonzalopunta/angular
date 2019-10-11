@@ -22,15 +22,14 @@ export class PeliculasListadoComponent implements OnInit {
     this.peliculaSeleccionada = pelicula
   }
 
-  getColor(){
-
-    if (this.peliculaSeleccionada.vote_average*10 < 50)
-     return 'red';
-    
-    else if (this.peliculaSeleccionada.vote_average>=50 && this.peliculaSeleccionada.vote_average<=70) 
-      return 'orange';
-      else
-        return 'green';
-  }
+  getColor(vote_average){
+    if(vote_average<50){
+      return "red";
+    }else if(vote_average>=50 && vote_average<=70){
+      return "orange";
+    }else{
+      return "green";
+    }
+   }
 
 }
