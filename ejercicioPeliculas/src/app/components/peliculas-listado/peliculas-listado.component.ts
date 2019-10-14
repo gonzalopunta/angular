@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { peliculas } from '../models/peliculas';
-import { PELICULAS } from '../models/mock-peliculas';
+import { peliculas } from '../../models/peliculas';
+import { PELICULAS } from '../../models/mock-peliculas';
 
 @Component({
   selector: 'app-peliculas-listado',

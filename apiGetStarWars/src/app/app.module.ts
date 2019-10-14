@@ -11,11 +11,19 @@ import { ListadoPeliculasComponent } from './components/listado-peliculas/listad
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule, Routes } from '@angular/router';
+import { PlanetsListadoComponent } from './components/planets-listado/planets-listado.component';
+
+const appRoutes: Routes = [
+  {path: 'peliculas', component: ListadoPeliculasComponent},
+  {path: 'planetas', component: PlanetsListadoComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoPeliculasComponent
+    ListadoPeliculasComponent,
+    PlanetsListadoComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +33,10 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     MatToolbarModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forRoot(
+      appRoutes
+    )
 
   ],
   providers: [PeliculasService],
