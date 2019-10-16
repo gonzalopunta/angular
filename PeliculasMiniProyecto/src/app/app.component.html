@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+  <div fxLayout="row" fxLayoutGap="20px">
+  <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">home</mat-icon>
+  <a [routerLink]="[ '/peliculas' ]">Películas populares</a>
+  <a [routerLink]="[ '/peliculas-top' ]">Mejor Valoradas</a>
+  <a [routerLink]="[ '/peliculas-last' ]">Últimas añadidas</a>
+  </div>
+</mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

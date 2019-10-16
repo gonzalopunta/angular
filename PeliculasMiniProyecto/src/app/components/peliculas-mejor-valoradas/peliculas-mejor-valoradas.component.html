@@ -1,0 +1,51 @@
+ <div fxLayout="column wrap" class="container"  fxLayoutGap="40px" fxLayoutAlign="center center">
+        <mat-card *ngFor="let pelicula of listadoFilms" fxLayout="row" fxFlex="1 1 calc(50% - 30px)">   
+            <div fxLayout="row" fxLayoutAlign="stretch" fxLayoutGap="30px" >
+            <mat-card-header>
+                <mat-card-title >
+                <img class=""  mat-card-image src="https://image.tmdb.org/t/p/w500{{pelicula.poster_path}}"  alt="Foto de {{pelicula.title}}">
+                </mat-card-title>
+            </mat-card-header>  
+            <div fxLayout="column" fxLayoutAlign="space-between stretch">
+            <mat-card-content>
+                    <mat-card-title fxLayoutAlign="stretch" fxLayoutGap="20px"
+                     [ngStyle]="{'color': getColor(pelicula.vote_average*10)}">
+                            <circle-progress 
+                            [percent]="pelicula.vote_average*10"
+                            [radius]="35"
+                            [titleFontSize]="15"
+                            [outerStrokeWidth]="5"
+                            [innerStrokeWidth]="10"
+                            [outerStrokeColor]="getColor(pelicula.vote_average*10)"
+                            [innerStrokeColor]="getColor(pelicula.vote_average*10)"
+                            [animation]="true"
+                            [animationDuration]="300"
+                            [showSubtitle]="false"
+                          ></circle-progress>
+                    <div>
+                          <div class="tituloPeli">
+                            {{pelicula.title}}
+                        </div>
+                        <div>
+                            {{pelicula.release_date}}
+                        </div>
+                    </div>
+                    </mat-card-title>
+
+                    {{pelicula.overview}}
+            </mat-card-content>
+            </div>
+            <mat-card-actions fxLayoutAlign="end end">
+                <a [routerLink]="[ '/detalles', pelicula.id]">Más detalles</a>
+                    </mat-card-actions>
+            </div>
+        </mat-card>
+
+
+
+
+    </div> 
+<div fxLayout="row" *ngIf="peliculaSeleccionada">
+    <app-pelicula-detalle [Pelicula]="peliculaSeleccionada"></app-pelicula-detalle>
+</div> 
+<router-outlet></router-outlet>
