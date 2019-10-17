@@ -60,7 +60,8 @@ NgCircleProgressModule.forRoot({
   FormsModule,
   RouterModule.forRoot(
     appRoutes
-  ),HttpClientModule,
+  ),
+  HttpClientModule,
   MatTableModule
   ],
   providers: [],
