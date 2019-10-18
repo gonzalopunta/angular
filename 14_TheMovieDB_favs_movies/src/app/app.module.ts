@@ -13,10 +13,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/pagina-no-encontrada.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListadoPeliculasLatestComponent } from './components/listado-peliculas-latest/listado-peliculas-latest.component';
-
 import { ListadoPeliculasTopComponent } from './components/listado-peliculas-top/listado-peliculas-top.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './service/auth.service';
+import { PeliculasFavoritasComponent } from './components/peliculas-favoritas/peliculas-favoritas.component';
 
 //RUTAS DE LA APP
 const routes: Routes = [ 
@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'latest', component: ListadoPeliculasLatestComponent }, 
   { path: 'toprated', component: ListadoPeliculasTopComponent },
   { path: 'movie/:id', component: PeliculaDetalleComponent },
+  { path: 'favoritas', component: PeliculasFavoritasComponent },
   { path: '', redirectTo: '/populares', pathMatch: 'full' }, 
   { path: '**', component: PaginaNoEncontradaComponent}
 ];
@@ -35,7 +36,8 @@ const routes: Routes = [
     PeliculaDetalleComponent,
     PaginaNoEncontradaComponent,
     ListadoPeliculasLatestComponent,
-    ListadoPeliculasTopComponent
+    ListadoPeliculasTopComponent,
+    PeliculasFavoritasComponent
   ],
   imports: [
     BrowserModule,
