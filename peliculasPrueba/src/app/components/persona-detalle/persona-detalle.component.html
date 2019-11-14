@@ -1,0 +1,11 @@
+<div>
+<div fxLayout="column" fxLayoutAlign="start start">
+    <img [src]="enlace+persona.profile_path" class="imgPeli" fxHide.sm="true"  fxHide.xs="true">
+    <p>Actor : <strong>{{persona.name}}</strong></p>
+<p>Lugar de Nacimiento: <strong>{{persona.place_of_birth}}</strong></p>
+<p>Fecha de nacimiento: <strong>{{persona.birthday}}</strong></p>
+<p *ngIf="persona.deathday == null"><strong> de Muerte: Sigue vivo</strong></p>
+<p *ngIf="persona.deathday != null">Fecha de Muerte: <strong>{{persona.deathday}}</strong></p>
+<p>Biografia: <strong>{{persona.biography}}</strong></p>
+</div>
+</div>
