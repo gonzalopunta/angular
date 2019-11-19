@@ -4,7 +4,8 @@ import {
   MatIconModule,
   MatListModule,
   MatMenuModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 import { ChartsModule } from 'ng2-charts';
@@ -27,6 +28,7 @@ import { UsuarioNuevoDialogComponent } from './usuario-nuevo-dialog/usuario-nuev
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatTableModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule,
+    FormsModule
    ],
   declarations: [DashboardComponent,
      UsuarioListadoComponent,

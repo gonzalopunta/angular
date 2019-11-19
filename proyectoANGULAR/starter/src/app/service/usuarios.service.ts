@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Usuario } from '../models/usuario.interface';
+import { UsuarioDto } from '../models/usuario.dto';
 
 export const collectionName='usuarios'
 
@@ -15,7 +16,7 @@ export class UsuariosService {
 
     //CRUD
     //[Create] un usuario
-    public createUsuario(){
+    public createUsuario(usuarioDto: UsuarioDto){
 
     }
 
