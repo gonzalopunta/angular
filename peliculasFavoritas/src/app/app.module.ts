@@ -19,7 +19,7 @@ import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/p
 import { ListadoPeliculasLatestComponent } from './components/listado-peliculas-latest/listado-peliculas-latest.component';
 import { ListadoPeliculasTopComponent } from './components/listado-peliculas-top/listado-peliculas-top.component';
 import { PeliculasFavoritasComponent } from './components/peliculas-favoritas/peliculas-favoritas.component';
-
+import { CreateListDialogComponent } from './components/componentsDialog/create-list-dialog/create-list.component';
 
 //Servicios
 import { PeliculasService } from './service/peliculas.service';
@@ -45,7 +45,11 @@ const routes: Routes = [
     PaginaNoEncontradaComponent,
     ListadoPeliculasLatestComponent,
     ListadoPeliculasTopComponent,
-    PeliculasFavoritasComponent
+    PeliculasFavoritasComponent,
+    CreateListDialogComponent
+  ],
+  entryComponents: [
+
   ],
   imports: [
     BrowserModule,

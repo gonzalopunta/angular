@@ -1,0 +1,59 @@
+<div fxLayout="column" fxLayoutAlign="space-between none" fxLayoutGap="20px">
+
+<button mat-raised-button color="primary" (click)="openDialog()" >
+  <mat-icon aria-hidden="false" aria-label="add">add</mat-icon>
+  </button>
+<mat-table [dataSource]="listadoUsuarios" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="Es_Admin">
+    <mat-header-cell *matHeaderCellDef> Es Admin</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Es_Admin}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Email}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Nombre">
+    <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Nombre}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Apellidos">
+    <mat-header-cell *matHeaderCellDef> Apellidos </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Apellidos}} </mat-cell>
+  </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Peso">
+      <mat-header-cell *matHeaderCellDef> Peso </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Peso}} </mat-cell>
+    </ng-container>
+
+
+      <!-- Symbol Column -->
+  <ng-container matColumnDef="Edad">
+    <mat-header-cell *matHeaderCellDef> Edad </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Edad}} </mat-cell>
+  </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Telefono">
+          <mat-header-cell *matHeaderCellDef> Telefono </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.Telefono}} </mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Fecha Nacimiento">
+          <mat-header-cell *matHeaderCellDef> FechaNacimiento </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.FechaNacimiento}} </mat-cell>
+        </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+</div>

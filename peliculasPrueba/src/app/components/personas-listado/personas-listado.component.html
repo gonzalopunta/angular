@@ -1,0 +1,25 @@
+<div fxLayout="row wrap" fxLayoutGap="5px" class="container">
+    <mat-card *ngFor="let personas of persona" fxFlex="1 1 calc(33.3%-5px)" fxFlex.lt-lg="1 1 calc(50%-5px)" fxFlex.lt-sm="1 1 calc(100%-5px)">
+        <div fxLayout="row">
+                <div fxLayout="column" fxLayoutAlign="start start">
+                        <img [src]="enlace+personas.profile_path" class="imgPeli" fxHide.sm="true"  fxHide.xs="true">
+                    </div>
+            <div fxLayout="column" fxLayoutAlign="start start">
+                <div fxLayout="row" >
+                    <div fxLayout="column" fxLayoutAlign="start start">
+                        <mat-card-title fxLayout="row">{{ personas.name}}</mat-card-title>
+                        <mat-card-subtitle fxLayout="row">{{ personas.popularity }}</mat-card-subtitle>
+                        <mat-card-subtitle fxLayout="row" *ngIf="personas.gender == 1">Mujer</mat-card-subtitle>
+                        <mat-card-subtitle fxLayout="row" *ngIf="personas.gender == 2">Hombre</mat-card-subtitle>
+                    </div>
+                    <a [routerLink]="[ '/detalles', personas.id.toString() ]">
+                        <p>Ver mas detalles</p>
+                      </a>
+                </div>
+         
+            </div>
+            </div>
+        
+    </mat-card>
+   
+</div>
