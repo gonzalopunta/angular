@@ -16,11 +16,12 @@ export class ArticulosComponent implements OnInit {
   constructor(private carritoService: CarritoService) { }
 
   ngOnInit() {
-    this.carritoService.getArticulos().subscribe(data => {
+    /*this.carritoService.getArticulos().subscribe(data => {
       console.log(data);
       this.carrito = data;
+
     },
-      error => alert(error));
+      error => alert(error));*/
   }
 
 }
