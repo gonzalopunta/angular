@@ -1,3 +1,54 @@
-<p>
-  articulos works!
-</p>
+<div style="text-align: center; margin-bottom: 20px;">
+  <span >
+     <span>{{listaArticulos.length}} producto(s) en el Carrito</span>
+  </span>
+</div>
+
+<div *ngIf="listaArticulos.length>0;else carroVacio">
+  <table class="table col-md-10 mx-auto">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Foto</th>
+        <th>Producto</th>
+        <th>Descripcion</th>
+        <th>Color</th>
+        <th>Talla</th>
+        <th>Cantidad</th>
+        <th>precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let articulos of listaArticulos">
+        <td>{{articulos.id}}</td>
+        <td><img [src]="articulos.foto" alt="" style="width: 50px; height: 50px;"></td>
+        <td>{{articulos.nombre}}</td>
+        <td>{{articulos.descripcion}}</td>
+        <td>{{articulos.color}}</td>
+        <td>{{articulos.talla}}</td>
+        <td><input min="1" type="number" value={{articulos.cantidad}}
+           [(ngModel)]="articulos.cantidad" (change)="changes($event)"></td>
+        <td><span *ngIf="articulos.rebajado" style="text-decoration: line-through;">{{articulos.precio}}€
+        </span><span *ngIf="!articulos.rebajado">{{articulos.precio}}€</span>
+          <br>
+         <span *ngIf="articulos.rebajado">El articulo esta rebajado</span>
+         <span *ngIf="articulos.rebajado">{{articulos.precioRebaja}}€</span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+        <tr >
+          <td colspan="6"></td>
+          <td>
+           <strong>Total:</strong> {{total}}€
+          </td>
+        </tr>
+    </tfoot>
+  </table>
+</div>
+
+<ng-template #carroVacio>
+  <div >
+    <strong>El carrito esta vacío.</strong>
+  </div>
+</ng-template>
